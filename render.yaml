@@ -1,1 +1,12 @@
-
+services:
+  - type: web
+    name: finmind-mcp
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python server.py
+    envVars:
+      - key: FINMIND_TOKEN
+        sync: false
+      - key: PYTHON_VERSION
+        value: "3.11"
